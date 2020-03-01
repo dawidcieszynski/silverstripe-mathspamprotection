@@ -139,7 +139,7 @@ class MathSpamProtectorField extends TextField
 
         $word = MathSpamProtectorField::digit_to_word($v1 + $v2);
 
-        return ($word == strtolower($answer) || (Config::inst()->get('MathSpamProtectorField', 'allow_numeric_answer') && (($v1 + $v2) == $answer)));
+        return ($word == mb_strtolower($answer) || (Config::inst()->get('MathSpamProtectorField', 'allow_numeric_answer') && (($v1 + $v2) == $answer)));
     }
 
     /**
